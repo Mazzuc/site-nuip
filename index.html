@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>TEKVORA
+    </title>
+    <style>
+        :root {
+            --verde-agua: #7BEACE;
+            --cinza-escuro: #333;
+            --cinza-claro: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: white;
+            color: var(--cinza-escuro);
+        }
+
+        header {
+            background-color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid #e0e0e0; /* linha leve pra destacar */
+        }
+
+
+
+        header h1 {
+            font-size: 36px;
+            background: linear-gradient(90deg, #7BEACE, #7BEACE);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+            letter-spacing: 2px;
+            transition: transform 0.3s ease;
+        }
+
+        header h1:hover {
+            transform: scale(1.05);
+        }
+
+        .banner {
+            background-color: var(--cinza-claro);
+            padding: 60px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .banner .texto {
+            max-width: 500px;
+            text-align: left;
+        }
+
+        .banner .texto h2 {
+            color: var(--cinza-escuro);
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+
+        .banner .texto p {
+            color: var(--cinza-escuro);
+            font-size: 12px;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        .image {
+            max-width: 500px;
+            max-height: 370px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+        }
+
+        .image img {
+            max-width: 80%;
+            max-height: 80%;
+            object-fit: contain;
+        }
+
+        .conteudo {
+            display: flex;
+            gap: 20px;
+            padding: 40px 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .card {
+            background-color: rgb(255, 255, 255);
+            border: 2px solid rgb(241, 240, 240);
+            border-radius: 8px;
+            width: 300px;
+            padding: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .card h3 {
+            color: black;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #555;
+            font-size: 15px;
+            text-align: justify;
+        }
+
+        .formulario {
+            background-color: var(--cinza-claro);
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .formulario h2 {
+            color: var(--verde-agua);
+            margin-bottom: 10px;
+            font-size: 32px;
+        }
+
+        .formulario p {
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .form-box {
+            background-color: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        form label {
+            text-align: left;
+            font-size: 15px;
+            display: block;
+            margin-bottom: 8px;
+            color: var(--cinza-escuro);
+            font-weight: bold;
+        }
+
+        form input, form textarea {
+            width: 100%;
+            background-color: #f9f9f9;
+            border: 2px solid var(--verde-agua);
+            padding: 10px 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        form input:focus, form textarea:focus {
+            border-color: #18a381;
+            background-color: white;
+        }
+
+        form textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        button {
+            background-color: var(--verde-agua);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #18a381;
+        }
+
+        footer {
+            background-color: var(--verde-agua);
+            color: white;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 30px 20px;
+        }
+
+        .footer-coluna {
+            margin: 10px;
+            min-width: 200px;
+        }
+
+        .footer-coluna h4 {
+            margin-bottom: 10px;
+            border-bottom: 2px solid white;
+            padding-bottom: 5px;
+        }
+
+        .footer-coluna ul {
+            list-style: none;
+        }
+
+        .footer-coluna ul li {
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+
+        /* RESPONSIVIDADE */
+        @media (max-width: 1024px) {
+            .banner {
+                padding: 40px 20px;
+                gap: 20px;
+            }
+
+            .banner .texto h2 {
+                font-size: 22px;
+            }
+
+            .banner .texto p {
+                font-size: 13px;
+            }
+
+            .image img {
+                max-width: 90%;
+            }
+
+            .conteudo {
+                padding: 30px 20px;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 28px;
+            }
+
+            .banner {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .banner .texto {
+                max-width: 100%;
+            }
+
+            .banner .texto h2 {
+                font-size: 20px;
+            }
+
+            .banner .texto p {
+                font-size: 13px;
+                text-align: justify;
+            }
+
+            .image {
+                max-width: 100%;
+            }
+
+            .conteudo {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .card {
+                width: 90%;
+            }
+
+            .form-box {
+                padding: 20px;
+                width: 100%;
+            }
+
+            .formulario h2 {
+                font-size: 26px;
+            }
+
+            .formulario p {
+                font-size: 14px;
+            }
+
+            footer {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .footer-coluna {
+                min-width: auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 24px;
+            }
+
+            .banner .texto h2 {
+                font-size: 18px;
+            }
+
+            .banner .texto p {
+                font-size: 12px;
+            }
+
+            .card h3 {
+                font-size: 18px;
+            }
+
+            .card p {
+                font-size: 13px;
+            }
+
+            .formulario h2 {
+                font-size: 22px;
+            }
+
+            .formulario p {
+                font-size: 13px;
+            }
+
+            button {
+                width: 100%;
+            }
+
+            footer {
+                padding: 20px 10px;
+            }
+
+            .footer-coluna h4 {
+                font-size: 16px;
+            }
+
+            .footer-coluna ul li {
+                font-size: 13px;
+            }
+        }
+
+        /* Telas de computadores menores e notebooks (entre 1024px e 1366px) */
+        @media (max-width: 1366px) {
+            header h1 {
+                font-size: 30px;
+            }
+
+            .banner .texto h2 {
+                font-size: 22px;
+            }
+
+            .banner .texto p {
+                font-size: 13px;
+            }
+
+            .card {
+                width: 280px;
+            }
+
+            .formulario h2 {
+                font-size: 28px;
+            }
+
+            .form-box {
+                padding: 30px;
+            }
+        }
+
+        /* Telas de tablets (entre 768px e 1024px) */
+        @media (max-width: 1024px) {
+            .banner {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .banner .texto {
+                max-width: 90%;
+                text-align: center;
+            }
+
+            .banner .texto h2 {
+                font-size: 24px;
+            }
+
+            .banner .texto p {
+                font-size: 14px;
+            }
+
+            .image {
+                max-width: 90%;
+            }
+
+            .conteudo {
+                flex-direction: row;
+                justify-content: center;
+            }
+
+            .card {
+                width: 80%;
+                max-width: 350px;
+            }
+
+            .formulario h2 {
+                font-size: 26px;
+            }
+
+            .formulario p {
+                font-size: 14px;
+            }
+
+            .form-box {
+                padding: 25px;
+            }
+
+            footer {
+                justify-content: center;
+                text-align: center;
+            }
+
+            .footer-coluna {
+                min-width: 150px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>TEKVORA</h1>
+    </header>
+
+    <section class="banner">
+        <div class="texto">
+            <h2>Quem Somos</h2>
+            <p>
+                Somos uma empresa de tecnologia formada por seis programadores apaixonados por inovação e soluções inteligentes.
+                Desenvolvemos um software de suporte técnico para empresas que dependem da tecnologia no seu dia a dia.
+                Nosso objetivo é oferecer um atendimento rápido, eficiente e organizado para quando algo buga ou quebra no escritório.
+                Nossa missão é transformar problemas em soluções, ajudando você a manter seu negócio funcionando sem preocupações.
+            </p>
+        </div>
+
+        <div class="image">
+            <img src="img/imagem2.png" alt="Imagem">
+        </div>
+    </section>
+
+    <section class="conteudo">
+        <div class="card">
+            <h3>Missão</h3>
+            <p>Nosso intuito é otimizar o atendimento de suporte técnico, oferecendo respostas mais rápidas e claras.</p>
+        </div>
+        <div class="card">
+            <h3>Visão</h3>
+            <p>Nossa visão é transformar a experiência do usuário com o sistema de atendimento mais rápido do mercado.</p>
+        </div>
+        <div class="card">
+            <h3>Valores</h3>
+            <p>Nossa prioridade é na usabilidade do cliente, com isso, trazemos inovação e tecnologia de ponta.</p>
+        </div>
+    </section>
+
+    <section class="banner">
+        <div class="texto">
+            <h2>Tecnologia com IA</h2>
+            <p>
+                A tecnologia tem transformado o mundo de maneira acelerada e irreversível. O avanço das soluções digitais, especialmente da Inteligência Artificial (IA), vem remodelando a forma como as empresas interagem com seus clientes e otimizam seus processos internos. A integração da IA em sistemas corporativos tem proporcionado respostas mais rápidas, redução de custos e aumento da eficiência operacional, consolidando-se como um diferencial competitivo significativo.
+            </p>
+        </div>
+
+        <div class="image">
+            <img src="img/imagem1.png" alt="Imagem">
+        </div>
+    </section>
+
+    <section class="formulario">
+        <h2>Entre em Contato</h2>
+        <p>Ficaremos felizes em atender você! Preencha os campos abaixo:</p>
+    
+        <div class="form-box">
+            <form>
+                <label for="nome">Nome Completo</label>
+                <input type="text" id="nome" placeholder="Digite seu nome" required>
+    
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Digite seu email" required>
+    
+                <label for="mensagem">Mensagem</label>
+                <textarea id="mensagem" placeholder="Digite sua mensagem" required></textarea>
+    
+                <button type="submit">Enviar Mensagem</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-coluna">
+            <h4>Institucional</h4>
+            <ul>
+                <li>Quem Somos</li>
+                <li>Missão</li>
+                <li>Visão</li>
+                <li>Valores</li>
+            </ul>
+        </div>
+        <div class="footer-coluna">
+            <h4>Informações</h4>
+            <ul>
+                <li>Política de Privacidade</li>
+                <li>Termos de Uso</li>
+                <li>Ajuda</li>
+            </ul>
+        </div>
+        <div class="footer-coluna">
+            <h4>Contato</h4>
+            <ul>
+                <li>Email: contato@academico.com</li>
+                <li>Telefone: (00) 1234-5678</li>
+                <li>Endereço: Rua Exemplo, 123</li>
+            </ul>
+        </div>
+    </footer>
+
+</body>
+</html>
